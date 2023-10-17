@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,800&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: hsl(0, 0%, 94%);
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+}
+main{
+  background-color: white;
+  margin: 6rem 2rem 2rem ;
+  padding: 1rem;
+
+  border-radius: 20px 20px 80px 20px;
+}
+.inputs{
+  margin-block-end: 3.5rem;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+}
+label{
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: hsl(0, 1%, 44%);
+  letter-spacing: 0.3ch;
+  margin-block: .25rem;
+}
+.input-container{
+  display: flex;
+  flex-flow: column;
+}
+input{
+  color: hsl(0, 0%, 8%);
+  font-family: 'Poppins';
+  font-size: 1.25rem;
+  font-weight: 700;
+  max-width: 90px;
+  margin-inline-end: .5rem;
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 10px;
+  padding: .75rem 1rem;
+}
+input:focus{
+
+  outline: 1px solid hsl(259, 62%, 42%);
+}
+.input-error{
+  color: hsl(0, 100%, 67%);
+}
+.field-empty{
+  color: hsl(0, 97%, 61%);
+  font-size: .5rem;
+  font-style: italic;
+  white-space: nowrap;
+
+  padding: .25rem;
+}
+.div{
+  margin-block: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.div .hr{
+  height: 1px;
+  background-color: hsl(0, 0%, 86%);
+  border: none;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img{
+  background-color: hsl(259, 100%, 65%);
+
+  padding: 1rem;
+  border-radius: 50%;
+
+  width: 60px;
+  height: 60px;
+}
+img:hover{
+  background-color: black;
+}
+
+h2{
+  font-style: italic;
+  line-height: 1.1;
+}
+h2 span{
+  color: hsl(259, 100%, 65%);
+}
+.age-display{
+  margin-block-end: 1rem;
+  margin-inline: .25rem;
+}
+
+@media screen and (min-width: 1024px) {
+  body{
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main{
+    width: 700px;
+    max-width: 700px;
+    padding: 2rem;
+    border-radius: 20px 20px 150px 20px;
+    font-size: 3rem;
+  }
+  .inputs{
+    margin-block-end: 2.5rem;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .input-container{
+    margin-inline-end: 1rem;
+  }
+  input{
+    max-width: 125px;
+    width: 100%;
+    font-size: 1.5rem;
+    border-radius: 7px;
+  }
+  
+  .div{
+    margin-block-start: 0; 
+  }
+  .div .hr{
+    justify-content: flex-end;
+  }
+  .div .hr img{
+    width: 80px;
+    height: 80px;
+    padding: 1.25rem;
+  }
+  .field-empty{
+    font-size: .75rem;
+  }
+}
