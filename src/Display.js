@@ -6,13 +6,36 @@ const Display = ({state, dispatch}) => {
     const [day, setDay] = useState('- -');
     const today = new Date();
     const handleClick = () => {
-        
+            
         const calculateAge = () => {
             dispatch({type: 'setIsNotEmpty'});
-            setDay(Math.abs(today.getDay() - Number(state.birthDay)));
-            setMonth(Math.abs(today.getMonth() - Number(state.birthMonth)));
-            setYear(today.getFullYear() - Number(state.birthYear));
+            const birthDate = new Date(state.birthYear, state.birthMonth - 1, state.birthDay);
+
+            const yearDiff = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            const dayDiff = today.getDate() - birthDate.getDate();
+
+            let year = yearDiff;
+            let month = monthDiff;
+            let day = dayDiff;
+
+            if (day < 0) {
+                month -= 1;
+                const tempDate = new Date(today.getFullYear(), today.getMonth(), 0);
+                day += tempDate.getDate();
+            }
+
+            if (month < 0) {
+                year -= 1;
+                month += 12;
+            }
+
+            console.log(`The age is: Year: ${year}, Month: ${month}, Day: ${day}`);
+            setYear(year);
+            setMonth(month);
+            setDay(day);
         }
+
         const wrongDate = () => {
             setYear('- -');
             setMonth('- -');
